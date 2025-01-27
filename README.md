@@ -4,7 +4,7 @@ A LangGraph-based application that processes medical notes and automatically gen
 
 ## Overview
 
-This application uses a graph-based workflow to process medical notes, extract relevant information, and generate structured discharge notes. It leverages OpenAI's GPT-4 for natural language processing and understanding.
+This application uses a graph-based workflow to process medical notes, extract relevant information, and generate structured discharge notes. It leverages OpenAI's gpt-4o-minifor natural language processing and understanding.
 
 ## Features
 
