@@ -1,0 +1,51 @@
+ADMISSION NOTE
+Date: 2024-01-27
+
+Chief Complaint: 65-year-old male presenting with fever and shortness of breath
+
+History of Present Illness:
+Patient is a 65-year-old male with history of COPD who presents with 3 days of worsening shortness of breath, fever up to 101.5F, and productive cough with yellow sputum. Patient reports increased use of rescue inhaler without relief.
+
+Past Medical History:
+1. COPD diagnosed 10 years ago
+2. Hypertension
+3. Type 2 Diabetes
+4. Coronary Artery Disease s/p CABG 2018
+
+Medications on Admission:
+1. Albuterol inhaler PRN
+2. Tiotropium 18mcg daily
+3. Metformin 1000mg BID
+4. Lisinopril 20mg daily
+5. Aspirin 81mg daily
+
+Physical Examination:
+Vitals: T 101.2F, HR 98, BP 142/88, RR 24, O2 sat 89% on RA
+General: Elderly male in mild respiratory distress
+Lungs: Decreased breath sounds bilaterally with diffuse wheezing and rhonchi
+Heart: Regular rate and rhythm, no murmurs
+Extremities: No edema
+
+Laboratory Data:
+WBC: 14.5
+Hgb: 13.2
+Plt: 245
+Na: 138
+K: 4.2
+Cr: 1.1
+BUN: 18
+CXR: Bilateral infiltrates consistent with pneumonia
+
+Assessment:
+1. Acute COPD exacerbation
+2. Community-acquired pneumonia
+3. Hypoxemia
+
+Plan:
+1. Admit to medical floor
+2. Start IV antibiotics: Ceftriaxone and Azithromycin
+3. Continue home medications
+4. Oxygen supplementation
+5. Nebulizer treatments q4h
+6. DVT prophylaxis
+7. Monitor respiratory status 

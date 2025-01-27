@@ -1,0 +1,69 @@
+```mermaid
+graph TD
+    %% Main Flow
+    Start((Start)) --> RetrieveDocs[Retrieve Documents]
+    RetrieveDocs --> CreateStore[Create Agent Store]
+    CreateStore --> ReadDoc[Read Document]
+    ReadDoc --> CheckConsistency{Check Consistency}
+    CheckConsistency -->|Consistent| UpdateStore[Update Agent Store]
+    UpdateStore --> WriteNote[Write Discharge Note]
+    WriteNote --> End((End))
+    
+    %% Inconsistent Path
+    CheckConsistency -->|Not Consistent| NextDoc{More Documents?}
+    NextDoc -->|Yes| ReadDoc
+    NextDoc -->|No| End
+    
+    %% Document Processing Subgraph
+    subgraph DocumentProcessing[Document Processing]
+        ReadDoc --> ExtractInfo[Extract Information]
+        ExtractInfo --> ParseJSON[Parse JSON Response]
+        ParseJSON --> UpdateScratchpad[Update Scratchpad]
+    end
+    
+    %% State Management
+    subgraph StateManagement[State Management]
+        AgentStore[(Agent Store)] --> CheckConsistency
+        Scratchpad[(Scratchpad)] --> CheckConsistency
+        UpdateStore --> AgentStore
+    end
+    
+    %% Data Structure
+    subgraph DataStructure[Data Structure]
+        AgentStore --> |Contains| AdmissionReason[Admission Reason]
+        AgentStore --> |Contains| Events[Events]
+        AgentStore --> |Contains| Laboratory[Laboratory]
+        AgentStore --> |Contains| Microbiology[Microbiology]
+        AgentStore --> |Contains| VAD[VAD]
+        AgentStore --> |Contains| Surgery[Surgery]
+        AgentStore --> |Contains| Chemotherapy[Chemotherapy]
+        AgentStore --> |Contains| Medications[Medications]
+        AgentStore --> |Contains| Instructions[Discharge Instructions]
+    end
+    
+    %% LLM Integration
+    subgraph LLMProcessing[LLM Processing]
+        ExtractInfo --> |Uses| LLM((GPT-4))
+        CheckConsistency --> |Uses| LLM
+        WriteNote --> |Uses| LLM
+    end
+    
+    %% Error Handling
+    subgraph ErrorHandling[Error Handling]
+        ParseJSON --> |Error| ErrorLog[Log Error]
+        ErrorLog --> FallbackState[Use Previous State]
+        FallbackState --> CheckConsistency
+    end
+    
+    %% Styling
+    classDef process fill:#f9f,stroke:#333,stroke-width:2px
+    classDef decision fill:#ff9,stroke:#333,stroke-width:2px
+    classDef data fill:#9ff,stroke:#333,stroke-width:2px
+    classDef start fill:#9f9,stroke:#333,stroke-width:2px
+    classDef end fill:#f99,stroke:#333,stroke-width:2px
+    
+    class Start,End start
+    class CheckConsistency,NextDoc decision
+    class AgentStore,Scratchpad data
+    class RetrieveDocs,CreateStore,ReadDoc,UpdateStore,WriteNote process
+``` 
