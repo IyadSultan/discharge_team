@@ -1,0 +1,30 @@
+graph TD
+    Start((Start)) --> RetrieveDocs[Retrieve Documents]
+    RetrieveDocs --> CreateStore[Create Store]
+    CreateStore --> ReadDoc[Read Document]
+    ReadDoc --> ProcessDoc[Process Document]
+    ProcessDoc --> CheckConsistency{Is Consistent?}
+    
+    CheckConsistency -->|Yes| UpdateStore[Update Store]
+    UpdateStore --> WriteNote[Write Discharge Note]
+    WriteNote --> End((End))
+    
+    CheckConsistency -->|No| NextDoc{More Documents?}
+    NextDoc -->|Yes| ReadDoc
+    NextDoc -->|No| End
+
+    %% Store Contents
+    subgraph Store[Store Contents]
+        Store1[Medical Data]
+        Store2[Events]
+        Store3[Instructions]
+    end
+
+    %% Styling
+    classDef decision fill:#ff9,stroke:#333
+    classDef process fill:#f9f,stroke:#333
+    classDef start fill:#9f9,stroke:#333
+    
+    class Start,End start
+    class CheckConsistency,NextDoc decision
+    class RetrieveDocs,CreateStore,ReadDoc,ProcessDoc,UpdateStore,WriteNote process

@@ -25,7 +25,11 @@ The application follows a graph-based workflow with the following components:
 4. State Management
 5. Discharge Note Generation
 
-See `mermaid.txt` for a detailed workflow diagram.
+See `static/img/mermaid2.txt` for a detailed workflow diagram:
+
+![Workflow Diagram](static/img/mermaid2.png)
+
+
 
 ## Prerequisites
 
@@ -133,5 +137,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - LangGraph framework
-- OpenAI GPT-4
+- OpenAI GPT-4o-mini
 - LangChain ecosystem 
