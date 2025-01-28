@@ -11,8 +11,9 @@
 8. Created comprehensive documentation
 9. Added .gitignore for version control
 10. Created detailed workflow diagram
-11. Switched to OpenAI gpt-4o-minifrom Claude
+11. Switched to OpenAI gpt-4o-mini from Claude
 12. Added MIT License
+13. Added .env.example template
 
 ## Current Tasks
 1. Test the workflow with sample notes
